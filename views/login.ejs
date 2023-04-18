@@ -1,0 +1,91 @@
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+    }
+    .logindata,.emaildata{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #000;
+        width: 400px;
+        background-color: aquamarine;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .logindata{
+        box-shadow: 0px 0px 5px 0;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .login-{
+        z-index: -1;
+    }
+    .emaildata{
+        box-shadow: 0px 0px 5px 0;
+        height: 140px;
+    }
+    input[type = email],input[type = password]{
+        width: 200px;
+        height: 25px;
+        border-radius: 5px;
+        border: 1px solid #000;
+        padding: 10px;
+    }
+    a,input[type = submit]{
+        display: inline-block;
+        text-decoration: none;
+        color: darkblue;
+        background-color: darkturquoise;
+        padding: 5px 15px;
+        font-size: 14px;
+        font-family: 'poppins';
+    }
+    .a-tagge{
+        display: block;
+        width: 15%;
+        margin: 20px auto;
+    }
+</style>
+
+<form class="emaildata" method="post" action="/emaildata">
+    <table>
+        <tr>
+            <td>EMAIL</td>
+            <td><input type="email" name="email"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="SEND OTP"></td>
+        </tr>
+    </table>
+</form>
+
+<form class="logindata" method="post" action="/logindata">
+    <table>
+        <tr>
+            <td>EMAIL</td>
+            <td><input type="email" name="email"></td>
+        </tr>
+        <tr>
+            <td>PASSWORD</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit"></td>
+        </tr>
+    </table>
+</form>
+
+<div class="a-tagge"><a class="lost-password" href="javascript:void(0)">lost password || GO BACK</a></div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+<script>
+    $(".lost-password").click(function(){
+        $("form").toggleClass("login-");
+    });
+</script>
